@@ -3,3 +3,7 @@
 - [LLM](/llm/)
   - [微调数据集构建](/llm/dataset)
   - [Ollama](/llm/ollama)
+- [Python](/python/)
+  - [uv](/python/uv)
+- [开发工具](/vscode/)
+
