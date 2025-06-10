@@ -6,4 +6,5 @@
 - [Python](/python/)
   - [uv](/python/uv)
 - [开发工具](/vscode/)
+- [环境安装](/environment/)
 
