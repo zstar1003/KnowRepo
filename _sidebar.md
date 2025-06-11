@@ -7,4 +7,4 @@
   - [uv](/python/uv)
 - [开发工具](/vscode/)
 - [环境安装](/environment/)
-  - [FFmpeg](/environment/ffmpeg/)
+  - [FFmpeg](/environment/ffmpeg)
