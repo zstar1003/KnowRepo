@@ -16,3 +16,24 @@
     ]
 }
 ```
+
+## 2. 导出单个镜像到一个文件
+```bash
+docker save -o ragflowplus.tar zstar1003/ragflowplus:v0.4.2
+docker save -o ragflowplus-management-web.tar zstar1003/ragflowplus-management-web:v0.4.2
+docker save -o ragflowplus-management-server.tar zstar1003/ragflowplus-management-server:v0.4.2
+```
+
+
+
+## 3. 导出多个镜像到一个文件
+```bash
+docker save -o multiple_images.tar zstar1003/ragflowplus:v0.4.2 zstar1003/ragflowplus-management-web:v0.4.2 zstar1003/ragflowplus-management-server:v0.4.2
+```
+
+## 4. 加载镜像
+```bash
+docker load -i ragflowplus.tar
+docker load -i ragflowplus-management-web.tar
+docker load -i ragflowplus-management-server.tar
+```
