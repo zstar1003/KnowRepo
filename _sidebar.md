@@ -6,5 +6,6 @@
 - [Python](/python/)
   - [uv](/python/uv)
 - [开发工具](/vscode/)
+  - [Git相关命令](/vscode/git)
 - [环境安装](/environment/)
   - [FFmpeg](/environment/ffmpeg)
