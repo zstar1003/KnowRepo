@@ -1,12 +1,32 @@
-# 给新机装nvidia驱动
+# 环境安装
 
-版本号575换成适合自己的版本号
+## 1. Ubuntu 安装ssh服务
+
 ```bash
-sudo apt install nvidia-cuda-toolkit
-sudo apt install nvidia-container-toolkit
-sudo apt install nvidia-fabricmanager-575
-sudo apt install libnvidia-nscq-575
-sudo systemctl start nvidia-fabricmanager
-sudo systemctl enable nvidia-fabricmanager
-sudo systemctl status nvidia-fabricmanager
+sudo apt update
+sudo apt install openssh-server
+```
+
+验证ssh服务状态
+
+```bash
+sudo systemctl status ssh
+```
+
+开放SSH端口
+
+```bash
+sudo ufw allow ssh
+```
+
+启用防火墙
+
+```bash
+sudo ufw enable
+```
+
+检查防火墙规则
+
+```bash
+sudo ufw status
 ```
