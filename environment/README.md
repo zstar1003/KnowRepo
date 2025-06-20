@@ -63,11 +63,42 @@ sudo chown -R zxy:zxy ./DeepSeek-R1-0528
 sudo chmod -R 755 ./DeepSeek-R1-0528 
 ```
 
-## 3. 给文档授权
-
-批量杀进程
+## 4. 批量杀进程
 
 ```bash
 pkill -f "LLaMA-Factory/.venv/bin/python3"
 ```
 
+## 5. 在 Linux 上安装 Docker 的步骤
+
+参考官方文档：https://docs.docker.com/engine/install/ubuntu
+
+1. 设置 Docker 的apt存储库。
+
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+2. 安装 Docker 包。
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+3. 验证 Docker 安装：
+```bash
+docker --version
+```
+ 
