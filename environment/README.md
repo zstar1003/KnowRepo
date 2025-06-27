@@ -101,4 +101,37 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```bash
 docker --version
 ```
- 
+
+## 6. 在 Linux 上 Docker 换源
+
+1. 编辑 Docker 的配置文件
+
+```bash
+sudo mkdir -p /etc/docker
+sudo vim /etc/docker/daemon.json
+```
+
+2. 配置镜像源
+
+```bash
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://docker.imgdb.de",
+        "https://docker-0.unsee.tech",
+        "https://docker.hlmirror.com",
+        "https://docker.1ms.run",
+        "https://func.ink",
+        "https://lispy.org",
+        "https://docker.xiaogenban1993.com"
+    ]
+}
+```
+
+3. 重启 Docker 服务
+
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl restart docker
+```
+

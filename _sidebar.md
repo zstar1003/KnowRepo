@@ -9,3 +9,5 @@
   - [Git相关命令](/vscode/git)
 - [环境安装](/environment/)
   - [FFmpeg](/environment/ffmpeg)
+- [Linux常用命令](/linux/)
+- [Leetcode刷题笔记](/leetcode/)
