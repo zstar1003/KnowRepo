@@ -12,62 +12,51 @@ wget -qO- https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## 2. 更新
-```bash
-uv self update
-```
-
-## 3. 卸载
-```bash
-uv cache clean
-rm -r "$(uv python dir)"
-rm -r "$(uv tool dir)"
-```
-
-## 4. 安装python
+## 2. 安装python
 ```bash
 uv python install
 ```
 
-## 5. 查看python
+## 3. 查看python
 ```bash
 uv python list
 ```
 
-## 6. 创建虚拟环境
+## 4. 创建虚拟环境
 ```bash
 uv venv --python 3.12
 ```
 
-## 7. 安装依赖
+## 5. 安装依赖
 ```bash
 uv pip install 包名 --index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 8. 修改配置文件换源
+## 6. 修改配置文件换源
 编辑文件：`~/.config/uv/uv.toml`
 ```bash
 [install]
 index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 ```
 
-## 9. 验证镜像是否生效
+## 7. 验证镜像是否生效
 ```bash
 uv pip install requests -v
 ```
-## 10. 初始化项目
+
+## 8. 初始化项目
 ```bash
 uv init 项目名称
 ```
 
-## 11. 创建虚拟环境
+## 9. 创建虚拟环境
 ```bash
 uv run
 uv sync  # sync 会从 pyproject.toml + uv.lock 安装
 uv lock
 ```
 
-## 12. 安装依赖
+## 10. 安装依赖
 ```bash
 # 查看依赖项树
 uv tree
@@ -98,22 +87,22 @@ uv add /example/foo-0.1.0-py3-none-any.whl
 uv add --dev pytest
 ```
 
-## 13. 移除依赖
+## 11. 移除依赖
 ```bash
 uv remove requests
 ```
 
-## 14. 升级依赖
+## 12. 升级依赖
 ```bash
 uv lock --upgrade-package requests
 ```
 
-## 15. 将uv.lock其导出为 requirements.txt 格式
+## 13. 将uv.lock其导出为 requirements.txt 格式
 ```bash
 uv export --format requirements-txt
 ```
 
-## 16. 缓存设置
+## 14. 缓存设置
 缓存清除
 ```bash
 # 清除缓存目录中的所有缓存条目，将其完全清空
@@ -131,7 +120,17 @@ uv中通过 --cache-dir 、 UV_CACHE_DIR 或 tool.uv.cache-dir 指定的�
 - linux缓存目录：`$XDG_CACHE_HOME/uv 或 $HOME/.cache/uv`
 - Windows 系统： `%LOCALAPPDATA%\uv\cache`
 
-## 17. 根据pip安装
+## 15. 根据pip安装
 ```bash
-uv pip sync docs/requirements.txt
+uv pip sync requirements.txt
+```
+
+## 16. 使用 uv pip freeze 导出当前环境依赖
+```bash
+uv pip freeze > requirements.txt
+```
+
+## 17. 生成锁文件
+```bash
+uv pip sync uv.lock
 ```
