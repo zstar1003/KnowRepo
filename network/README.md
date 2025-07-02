@@ -9,3 +9,32 @@ ssh连接：
 ssh -p 22025 username@网关ip -p 22025
 ```
 
+## 2. 使用 socat 做端口转发
+
+sudo apt install socat
+
+配置永久转发：
+
+```bash
+sudo tee /etc/systemd/system/socat.service
+```
+
+将 15100 端口转发到本地 9000
+```bash
+[Unit]
+Description=Socat Port Forwarding
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP4-LISTEN:15100,reuseaddr,fork TCP4:127.0.0.1:9000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start socat
+sudo systemctl enable socat
+```
