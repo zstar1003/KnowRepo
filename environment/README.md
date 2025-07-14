@@ -135,3 +135,14 @@ sudo systemctl daemon-reexec
 sudo systemctl restart docker
 ```
 
+## 7. 在 Linux 上 使用 yycd
+
+启动clash：
+```bash
+# ~/clash
+./clash -d .
+```
+
+开启端口转发 9999 -> 9090 
+
+访问：http://localhost:9999/ui
