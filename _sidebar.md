@@ -9,6 +9,7 @@
 - [开发工具](/vscode/)
   - [Git相关命令](/vscode/git)
 - [环境安装](/environment/)
+  - [qw](/environment/qw)
   - [FFmpeg](/environment/ffmpeg)
 - [Linux常用命令](/linux/)
 - [Leetcode刷题笔记](/leetcode/)
